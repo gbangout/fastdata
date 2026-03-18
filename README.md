@@ -1,7 +1,7 @@
 # Fastdata - Services Data Engineering & BI
 
 <div align="center">
-  <img src="assets/fastdata-logo.png" alt="Fastdata" width="120" height="120">
+  <img src="assets/fastdata-logo.png" alt="Fastdata" width="200" height="250">
   <br><br>
 </div>
 
