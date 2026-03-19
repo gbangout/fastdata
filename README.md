@@ -1,10 +1,5 @@
 # Fastdata - Services Data Engineering & BI
 
-<div align="center">
-  <img src="assets/fastdata-logo.png" alt="Fastdata" width="200" height="250">
-  <br><br>
-</div>
-
 Portfolio statique de services freelance data : stabilisation de pipelines, automatisation de scripts, qualité de données, Power BI, structuration.
 
 ## 🚀 Services data 
@@ -24,6 +19,11 @@ Portfolio statique de services freelance data : stabilisation de pipelines, auto
 **Talardia Gbangou**  
 *Data Engineer & BI freelance*  
 📍 Amiens, Hauts-de-France  
+<div align="center">
+  <img src="assets/fastdata-logo.png" alt="Fastdata" width="200" height="250">
+  <br><br>
+</div>
+
 
 | 📧 Email | 💼 LinkedIn | 🌐 Portfolio | 📱 Téléphone |
 |----------|-------------|--------------|--------------|
