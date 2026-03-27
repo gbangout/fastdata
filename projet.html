@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Projets - Fastdata</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Démos projets data engineering et BI - Fastdata">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo-title">
+      <img src="assets/fastdata-logo.png" alt="Fastdata" class="logo">
+      <div>
+        <h1>Fastdata</h1>
+        <p class="subtitle">Data Engineering & BI freelance</p>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="index.html#services">Services</a>
+      <a href="#projets">Projets</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="service1" class="section project-section">
+      <h2>1. Pipelines robustes & monitorés</h2>
+      <article class="project-demo">
+        <div class="demo-before-after">
+          <div class="demo-item">
+            <h3>🚨 AVANT</h3>
+            <ul>
+              <li>Pipeline PySpark casse 2x/semaine</li>
+              <li>Pas de logs exploitables</li>
+              <li>Relance manuelle tous les 2 jours</li>
+              <li>Retards reporting métiers</li>
+            </ul>
+          </div>
+          <div class="demo-arrow">→</div>
+          <div class="demo-item">
+            <h3>✅ APRÈS</h3>
+            <ul>
+              <li>Flux Airflow stable 30j</li>
+              <li>Logs + alertes Slack/Teams</li>
+              <li>Monitoring des jobs critiques</li>
+              <li>Données à jour quotidiennement</li>
+            </ul>
+          </div>
+        </div>
+        <p class="demo-result">**Résultat** : 80% temps gagné sur maintenance, plus de retards reporting.</p>
+      </article>
+    </section>
+
+    <section id="service2" class="section project-section">
+      <h2>2. Automatisation de scripts manuels</h2>
+      <article class="project-demo">
+        <div class="demo-before-after">
+          <div class="demo-item">
+            <h3>🚨 AVANT</h3>
+            <ul>
+              <li>3 scripts Python lancés manuellement</li>
+              <li>Cassent si API indisponible</li>
+              <li>Données pas toujours à jour</li>
+              <li>1h/semaine de relance</li>
+            </ul>
+          </div>
+          <div class="demo-arrow">→</div>
+          <div class="demo-item">
+            <h3>✅ APRÈS</h3>
+            <ul>
+              <li>Automatisation cron + retry</li>
+              <li>Gestion erreurs (mail d'alerte)</li>
+              <li>Données fraîches tous les jours</li>
+              <li>0 intervention manuelle</li>
+            </ul>
+          </div>
+        </div>
+        <p class="demo-result">**Résultat** : Scripts 100% autonomes, données toujours fraîches.</p>
+      </article>
+    </section>
+
+    <section id="service3" class="section project-section">
+      <h2>3. Données propres & normalisées</h2>
+      <article class="project-demo">
+        <div class="demo-before-after">
+          <div class="demo-item">
+            <h3>🚨 AVANT</h3>
+            <ul>
+              <li>15 Excel clients avec doublons</li>
+              <li>Formats incohérents (dates, CP)</li>
+              <li>Analyses peu fiables</li>
+              <li>Erreurs reporting récurrentes</li>
+            </ul>
+          </div>
+          <div class="demo-arrow">→</div>
+          <div class="demo-item">
+            <h3>✅ APRÈS</h3>
+            <ul>
+              <li>Base SQL centralisée</li>
+              <li>Règles normalisation appliquées</li>
+              <li>Contrôles qualité intégrés</li>
+              <li>Tableau de bord suivi qualité</li>
+            </ul>
+          </div>
+        </div>
+        <p class="demo-result">**Résultat** : Données clients fiables, analyses exploitables.</p>
+      </article>
+    </section>
+
+    <section id="service4" class="section project-section">
+      <h2>4. Power BI rapide & fiable</h2>
+      <article class="project-demo">
+        <div class="demo-before-after">
+          <div class="demo-item">
+            <h3>🚨 AVANT</h3>
+            <ul>
+              <li>Rapports Power BI > 30s chargement</li>
+              <li>3 versions KPI CA différents</li>
+              <li>Modèle non documenté</li>
+              <li>Questions métiers constantes</li>
+            </ul>
+          </div>
+          <div class="demo-arrow">→</div>
+          <div class="demo-item">
+            <h3>✅ APRÈS</h3>
+            <ul>
+              <li>Chargement < 5s</li>
+              <li>1 mesure DAX CA unifiée</li>
+              <li>Modèle documenté</li>
+              <li>Autonomie métiers</li>
+            </ul>
+          </div>
+        </div>
+        <p class="demo-result">**Résultat** : Temps chargement ÷6, confiance métiers restaurée.</p>
+      </article>
+    </section>
+
+    <section id="service5" class="section project-section">
+      <h2>5. Structuration & documentation</h2>
+      <article class="project-demo">
+        <div class="demo-before-after">
+          <div class="demo-item">
+            <h3>🚨 AVANT</h3>
+            <ul>
+              <li>Tables produits mal nommées</li>
+              <li>5 defs différentes "produit actif"</li>
+              <li>Équipes refont mêmes traitements</li>
+              <li>Erreurs de jointures fréquentes</li>
+            </ul>
+          </div>
+          <div class="demo-arrow">→</div>
+          <div class="demo-item">
+            <h3>✅ APRÈS</h3>
+            <ul>
+              <li>Référentiel produits unique</li>
+              <li>Schéma SQL clair + doc</li>
+              <li>Règles métier écrites</li>
+              <li>Jointures fiables</li>
+            </ul>
+          </div>
+        </div>
+        <p class="demo-result">**Résultat** : Équipes alignées, moins d'erreurs, gain productivité.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Fastdata – Data Engineering & BI freelance.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
