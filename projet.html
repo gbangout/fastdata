@@ -165,6 +165,283 @@
     </section>
   </main>
 
+  <main>
+<section class="section">
+<h2>Cas clients traités</h2>
+<p class="section-intro">Douleur métier → solution data → impact concret</p>
+
+<h3 class="group-title">1. Pipelines robustes & monitorés</h3>
+
+<div class="case-grid">
+
+<!-- CASE 1 -->
+<div class="case-card">
+  <h3>📉 Dashboard vide</h3>
+  <p class="pain">“Plus aucune vente affichée”</p>
+  <p class="solution">Gestion schéma (price vs unit_price)</p>
+  <p class="impact">✔ Pipeline résilient</p>
+
+  <button class="toggle-btn">👁 Voir code</button>
+
+  <div class="code-block">
+<pre>
+❌ Avant
+df["price"]
+
+⚠️ Problème
+Colonne renommée → pipeline cassé
+
+✅ Après
+price = df.get("price", df.get("unit_price"))
+</pre>
+  </div>
+</div>
+
+<!-- CASE 2 -->
+<div class="case-card">
+  <h3>⏱ Données incomplètes</h3>
+  <p class="pain">“Chiffres faux”</p>
+  <p class="solution">Late data + incrémental</p>
+  <p class="impact">✔ Décisions fiables</p>
+
+  <button class="toggle-btn">👁 Voir code</button>
+
+  <div class="code-block">
+<pre>
+❌ Avant
+df = df[df.date == today]
+
+⚠️ Problème
+Données arrivent en retard
+
+✅ Après
+df = df[df.date >= today - 3]
+</pre>
+  </div>
+</div>
+
+<!-- CASE 3 -->
+<div class="case-card">
+  <h3>🔁 Duplication</h3>
+  <p class="pain">“Données doublées”</p>
+  <p class="solution">Idempotence</p>
+  <p class="impact">✔ Données propres</p>
+
+  <button class="toggle-btn">👁 Voir code</button>
+
+  <div class="code-block">
+<pre>
+❌ Avant
+INSERT INTO table SELECT * FROM staging
+
+⚠️ Problème
+Re-run = doublons
+
+✅ Après
+MERGE INTO table USING staging ON id
+</pre>
+  </div>
+</div>
+
+<!-- CASE 4 -->
+<div class="case-card">
+  <h3>💥 Crash volume</h3>
+  <p class="pain">“Pipeline plante”</p>
+  <p class="solution">Chunk processing</p>
+  <p class="impact">✔ Scalabilité</p>
+
+  <button class="toggle-btn">👁 Voir code</button>
+
+  <div class="code-block">
+<pre>
+❌ Avant
+df = pd.read_csv("big.csv")
+
+⚠️ Problème
+Out of memory
+
+✅ Après
+for chunk in pd.read_csv("big.csv", chunksize=10000):
+    process(chunk)
+</pre>
+  </div>
+</div>
+
+<!-- CASE 5 -->
+<div class="case-card">
+  <h3>🌐 API instable</h3>
+  <p class="pain">“Données absentes”</p>
+  <p class="solution">Retry logique</p>
+  <p class="impact">✔ Résilience</p>
+
+  <button class="toggle-btn">👁 Voir code</button>
+
+  <div class="code-block">
+<pre>
+❌ Avant
+requests.get(url)
+
+⚠️ Problème
+Timeout API
+
+✅ Après
+retry(3):
+    requests.get(url, timeout=5)
+</pre>
+  </div>
+</div>
+
+</div>
+
+<!-- ===================== 2. AUTOMATISATION ===================== -->
+<h3 class="group-title">2. Automatisation</h3>
+<div class="case-grid">
+
+<div class="case-card">
+<h3>👨‍💻 Script manuel</h3>
+<p class="pain">“Quelqu’un doit lancer le job”</p>
+<p class="solution">Orchestration automatique</p>
+<p class="impact">✔ Fiable</p>
+<button class="toggle-btn">👁 Voir code</button>
+<div class="code-block"><pre>
+❌ AVANT
+python pipeline.py
+
+⚠️ PROBLÈME
+# dépendance humaine → oubli possible
+
+✅ APRÈS
+# cron (tous les jours à 2h)
+0 2 * * * python pipeline.py
+</pre></div>
+</div>
+
+<div class="case-card">
+<h3>⚙️ Paramètres en dur</h3>
+<p class="pain">“Impossible de rejouer facilement”</p>
+<p class="solution">Paramétrisation CLI</p>
+<p class="impact">✔ Flexible</p>
+<button class="toggle-btn">👁 Voir code</button>
+<div class="code-block"><pre>
+❌ AVANT
+date = "2024-01-01"
+
+⚠️ PROBLÈME
+# modification manuelle du code nécessaire
+
+✅ APRÈS
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--date")
+args = parser.parse_args()
+</pre></div>
+</div>
+
+</div>
+
+<!-- ===================== 3. DATA QUALITY ===================== -->
+<h3 class="group-title">3. Données propres & normalisées</h3>
+<div class="case-grid">
+
+<div class="case-card">
+<h3>⚠️ NaN</h3>
+<p class="pain">“KPI incohérents”</p>
+<p class="solution">Gestion explicite des nulls</p>
+<p class="impact">✔ Fiabilité</p>
+<button class="toggle-btn">👁 Voir code</button>
+<div class="code-block"><pre>
+❌ AVANT
+df["revenue"].mean()
+
+⚠️ PROBLÈME
+# présence de NaN → biais
+
+✅ APRÈS
+df["revenue"].fillna(0).mean()
+</pre></div>
+</div>
+
+<div class="case-card">
+<h3>📅 Dates incohérentes</h3>
+<p class="pain">“Analyses fausses”</p>
+<p class="solution">Normalisation</p>
+<p class="impact">✔ Cohérence</p>
+<button class="toggle-btn">👁 Voir code</button>
+<div class="code-block"><pre>
+❌ AVANT
+"01/02/2024"
+
+⚠️ PROBLÈME
+# format ambigu (US vs EU)
+
+✅ APRÈS
+pd.to_datetime(col, format="%d/%m/%Y")
+</pre></div>
+</div>
+
+</div>
+
+<!-- ===================== 4. PERFORMANCE ===================== -->
+<h3 class="group-title">4. Performance & coûts</h3>
+<div class="case-grid">
+
+<div class="case-card">
+<h3>🐢 Pipeline lent</h3>
+<p class="pain">“Traitement trop long”</p>
+<p class="solution">Vectorisation</p>
+<p class="impact">✔ x50</p>
+<button class="toggle-btn">👁 Voir code</button>
+<div class="code-block"><pre>
+❌ AVANT
+for i in range(len(df)):
+    df.loc[i, "x"] = df.loc[i, "a"] * 2
+
+⚠️ PROBLÈME
+# boucle Python lente
+
+✅ APRÈS
+df["x"] = df["a"] * 2
+</pre></div>
+</div>
+
+</div>
+
+<!-- ===================== 5. STRUCTURATION ===================== -->
+<h3 class="group-title">5. Structuration & documentation</h3>
+<div class="case-grid">
+
+<div class="case-card">
+<h3>🧾 Noms flous</h3>
+<p class="pain">“Incompréhensible”</p>
+<p class="solution">Nommage métier</p>
+<p class="impact">✔ Lisibilité</p>
+<button class="toggle-btn">👁 Voir code</button>
+<div class="code-block"><pre>
+❌ AVANT
+df["col1"]
+
+⚠️ PROBLÈME
+# aucune signification
+
+✅ APRÈS
+df.rename(columns={"col1": "total_sales"})
+</pre></div>
+</div>
+
+</div>
+
+</div>
+</section>
+</main>
+
+<script>
+document.querySelectorAll(".toggle-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const block = btn.nextElementSibling;
+    block.classList.toggle("open");
+  });
+});
+</script>
   <footer class="site-footer">
     <p>© <span id="year"></span> Fastdata – Data Engineering & BI freelance.</p>
   </footer>
