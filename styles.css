@@ -383,3 +383,6 @@ pre {
   font-size: 0.85rem;
   overflow-x: auto;
 }
+body {
+  text-align: center;
+}
