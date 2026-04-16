@@ -386,3 +386,7 @@ pre {
   font-size: 0.85rem;
   overflow-x: auto;
 }
+
+.section {
+  margin-left: 200px;
+}
