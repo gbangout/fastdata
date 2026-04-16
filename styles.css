@@ -363,7 +363,7 @@ main {
   padding: 6px 10px;
   border-radius: 6px;
   cursor: pointer;
-  margin-left: 60px;
+  margin-left: 100px;
 }
 
 .code-block {
@@ -371,6 +371,7 @@ main {
   overflow: hidden;
   transition: 0.3s ease;
   margin-top: 10px;
+  margin-left: 100px;
 }
 
 .code-block.open {
@@ -383,6 +384,8 @@ pre {
   border-radius: 6px;
   font-size: 0.85rem;
   overflow-x: auto;
+  padding-left: 100px;
+  
 }
 body {
   text-align: left;
