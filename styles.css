@@ -355,3 +355,31 @@ main {
   }
 }
 
+.toggle-btn {
+  margin-top: 10px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.code-block {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.code-block.open {
+  max-height: 300px;
+}
+
+pre {
+  background: #020617;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  overflow-x: auto;
+}
